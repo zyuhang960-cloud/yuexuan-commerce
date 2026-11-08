@@ -2,6 +2,8 @@
 
 A complete e-commerce web application that runs locally: browsing, accounts, cart, checkout, orders, and a merchant back office — built with **Node.js and SQLite, no frameworks, no build step**.
 
+`github.com/zyuhang960-cloud/yuexuan-commerce`
+
 > **Demo video (2 min):** _[paste your YouTube link here]_
 
 ![Storefront](docs/screenshot-storefront.png)
@@ -13,7 +15,7 @@ A complete e-commerce web application that runs locally: browsing, accounts, car
 
 A self-initiated project, built outside coursework and inspired by my data-analysis internship in Shenzhen. The internship showed me how much of real business work is about keeping records consistent — stock, orders, customers, money. I wanted to build the whole loop myself rather than read about it, so I wrote a small but complete commerce system: a shopper-facing store and a merchant back office sharing one server and one database.
 
-Everything here is my own work: database schema, HTTP API, session handling, permission checks, front-end pages, the test suite and the demo data.
+Everything here is my own work: database schema, HTTP API, session handling, permission checks, front-end pages, the test suite and the demo data. The catalogue holds 228 products across 20 categories, and the merchant side ships with seeded demo customers and orders so the dashboard is never empty.
 
 ## Features
 
@@ -57,13 +59,12 @@ State lives in one transactional table and is written on every mutation, so a cr
 
 ## How to run
 
-**Windows, nothing installed** — the repository ships a Node runtime:
+**Requirements:** Node.js 22 or newer (the server uses the built-in `node:sqlite` module). Nothing else — no npm install, no database server.
 
-1. Clone or download this repository.
-2. Double-click **`启动悦选商城.bat`** → the browser opens `http://127.0.0.1:8787/`.
-3. To stop the server, double-click **`停止悦选商城.bat`**.
+**Windows, one click.** If you received the packaged folder (which includes `runtime
+ode.exe`), just double-click **`启动悦选商城.bat`**; the browser opens `http://127.0.0.1:8787/`. Double-click **`停止悦选商城.bat`** to stop it.
 
-**Any OS with Node.js 22+**
+**From a Git clone, or on macOS / Linux:**
 
 ```bash
 cd 商城程序
@@ -80,13 +81,13 @@ cd 商城程序
 npm test
 ```
 
-Result: **11 / 11 passing**, covering catalogue integrity, registration rules, session isolation, cart and checkout, stock deduction, coupon and points rollback, refunds and permission checks.
+Result: **11 / 11 passing**. The suite runs against a temporary database, so it never touches your demo data. It covers catalogue integrity, registration rules, session isolation, cart and checkout, stock deduction, coupon and points rollback, refunds and permission checks.
 
 ## Project layout
 
 ```
 ├─ 启动悦选商城.bat / 停止悦选商城.bat    # one-click start / stop (Windows)
-├─ runtime/node.exe                       # bundled Node runtime
+├─ runtime/node.exe                       # bundled Node runtime (packaged build only, not tracked in Git)
 ├─ docs/                                  # screenshots
 └─ 商城程序/
    ├─ server.js        # HTTP server, API, business rules
