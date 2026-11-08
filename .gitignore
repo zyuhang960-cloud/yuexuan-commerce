@@ -1,0 +1,13 @@
+# 自带运行时太大，克隆方自行安装 Node.js 22+ 即可
+runtime/node.exe
+
+# 数据库与临时文件（首次运行会自动生成演示数据）
+商城程序/data/*.db
+商城程序/data/*.db-shm
+商城程序/data/*.db-wal
+商城程序/runtime/*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.zip

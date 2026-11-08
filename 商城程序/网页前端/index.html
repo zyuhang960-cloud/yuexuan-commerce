@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="悦选商城，好物、会员权益与便捷购物体验">
+    <title>悦选电商平台</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c35d32'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23fff' font-family='serif'%3E悦%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#1f3a2c">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="vendor/aos/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">悦</div>
+                <div>
+                    <strong>悦选电商平台</strong>
+                    <span>Store & Commerce Ops</span>
+                </div>
+            </div>
+
+            <div class="project-chip">
+                <span class="pulse-dot"></span>
+                <div>
+                    <strong>悦选商家中心</strong>
+                    <small>商品 · 订单 · 库存 · 经营</small>
+                </div>
+            </div>
+
+            <nav class="nav-list" aria-label="系统功能">
+                <button class="nav-item active" data-page="storefront">
+                    <span class="nav-icon">店</span><span>商城前台</span>
+                </button>
+                <button class="nav-item" data-page="dashboard">
+                    <span class="nav-icon">⌂</span><span>数据概览</span>
+                </button>
+                <button class="nav-item" data-page="products">
+                    <span class="nav-icon">◇</span><span>商品管理</span>
+                </button>
+                <button class="nav-item" data-page="customers">
+                    <span class="nav-icon">◎</span><span>客户管理</span>
+                </button>
+                <button class="nav-item" data-page="orders">
+                    <span class="nav-icon">▤</span><span>订单管理</span>
+                </button>
+                <button class="nav-item" data-page="inventory">
+                    <span class="nav-icon">▦</span><span>库存管理</span>
+                </button>
+                <button class="nav-item" data-page="analytics">
+                    <span class="nav-icon">↗</span><span>经营分析</span>
+                </button>
+                <button class="nav-item" data-page="marketing">
+                    <span class="nav-icon">券</span><span>营销与问答</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="ghost-button full-width" id="adminLogoutBtn">退出商家中心</button>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="icon-button menu-button" id="menuButton" aria-label="打开菜单">☰</button>
+                    <div>
+                        <p class="eyebrow" id="pageEyebrow"></p>
+                        <h1 id="pageTitle">悦选商城</h1>
+                    </div>
+                </div>
+                <div class="topbar-actions">
+                    <div class="today-box">
+                        <span>今日</span>
+                        <strong id="todayText">2026年8月26日</strong>
+                    </div>
+                    <button class="secondary-button" id="exportBtn">导出与打印</button>
+                    <button class="primary-button" id="quickOrderBtn">购物车</button>
+                </div>
+            </header>
+
+            <main class="content" id="pageContent" tabindex="-1"></main>
+        </div>
+    </div>
+
+    <div class="sidebar-mask" id="sidebarMask"></div>
+
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow" id="modalEyebrow">填写信息</p>
+                    <h2 id="modalTitle">操作窗口</h2>
+                </div>
+                <button class="icon-button" id="closeModalBtn" aria-label="关闭窗口">×</button>
+            </div>
+            <form id="modalForm">
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-button" id="cancelModalBtn">取消</button>
+                    <button type="submit" class="primary-button" id="submitModalBtn">保存</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="vendor/aos/aos.js"></script>
+    <script src="server-api.js"></script>
+    <script src="catalog-data.js"></script>
+    <script src="data-service.js"></script>
+    <script src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function () {});
+        });
+      }
+    </script>
+</body>
+</html>
