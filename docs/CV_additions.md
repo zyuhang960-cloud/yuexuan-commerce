@@ -1,6 +1,6 @@
 # 简历要加的内容（照抄）
 
-## 1. 名字下面那行空白（黄老师圈出来的位置）
+## 1. 名字下面那行空白（老师圈出来的位置）
 
 ```
 GitHub: github.com/yuhang-cs    |    Portfolio: Yuexuan Commerce (see Projects)
