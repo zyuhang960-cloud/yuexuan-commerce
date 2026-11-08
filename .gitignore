@@ -11,3 +11,7 @@ runtime/node.exe
 .DS_Store
 Thumbs.db
 *.zip
+
+# 内部说明文件（不对外）
+docs/CV_additions.md
+docs/RECORDING_SCRIPT.md
