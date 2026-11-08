@@ -4,7 +4,7 @@ A complete e-commerce web application that runs locally: browsing, accounts, car
 
 `github.com/zyuhang960-cloud/yuexuan-commerce`
 
-> **Demo video (2 min):** _[paste your YouTube link here]_
+> **Demo video (1 min 40 s):** https://youtu.be/YzX1jz4FEFo
 
 ![Storefront](docs/screenshot-storefront.png)
 ![Mobile view](docs/screenshot-mobile.png)
